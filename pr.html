@@ -1,0 +1,248 @@
+<!-- 이 문서가 HTML5 문서라는 것을 브라우저에 알려줌 (항상 맨 첫 줄에 작성) -->
+<!DOCTYPE html>
+
+<!-- html: 웹페이지 전체를 감싸는 최상위 태그 / lang="ko": 이 페이지의 언어가 한국어임을 알려줌 (검색엔진, 화면 낭독기가 활용) -->
+<html lang="ko">
+
+<!-- head: 화면에는 보이지 않지만 페이지에 대한 정보(설정)를 담는 영역 -->
+<head>
+  <!-- 문자 인코딩 방식을 UTF-8로 지정 → 한글이 깨지지 않게 해줌 -->
+  <meta charset="UTF-8">
+
+  <!-- 모바일에서 화면 너비를 기기 너비에 맞추고, 처음 배율을 1배로 설정 (반응형 웹의 필수 설정) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 검색 결과에 표시되는 페이지 설명문 -->
+  <meta name="description" content="지금 떠나기 좋은 국내 여행지를 소개합니다. 서울부터 제주까지, 계절별 추천 코스와 여행 팁.">
+
+  <!-- 브라우저 탭에 표시되는 페이지 제목 -->
+  <title>우리나라 여행 | 국내 여행 가이드</title>
+
+  <!-- 외부 CSS 파일(css 폴더 안의 style.css)을 불러와서 디자인을 적용 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- body: 실제로 화면에 보이는 모든 내용이 들어가는 영역 -->
+<body>
+
+  <!-- ===================== 헤더 영역 ===================== -->
+  <!-- header: 페이지 상단 영역 (로고, 메뉴 등) / class는 CSS에서 꾸밀 때 사용할 이름표 -->
+  <header class="site-header">
+
+    <!-- div: 내용을 묶는 상자 / container: 내용 폭을 일정하게 맞출 용도 / header-inner: 로고와 메뉴 배치용 -->
+    <div class="container header-inner">
+
+      <!-- a: 링크 태그 / href: 클릭하면 이동할 주소 → 로고를 누르면 홈(index.html)으로 이동 -->
+      <!-- span: 글자 일부만 따로 꾸미기 위한 태그 ('여행'만 다른 색으로 꾸밀 수 있음) -->
+      <a href="index.html" class="logo">우리나라<span>여행</span></a>
+
+      <!-- nav: 내비게이션(메뉴) 영역임을 나타내는 태그 / aria-label: 화면 낭독기에 '주 메뉴'라고 알려줌 -->
+      <nav class="main-nav" aria-label="주 메뉴">
+
+        <!-- ul: 순서 없는 목록 / li: 목록의 각 항목 → 메뉴를 목록으로 만드는 것이 일반적인 방법 -->
+        <ul>
+          <!-- class="active": 현재 보고 있는 페이지 메뉴를 강조하기 위한 이름표 -->
+          <li><a href="index.html" class="active">홈</a></li>
+          <li><a href="destinations.html">여행지</a></li>
+          <li><a href="seasons.html">계절별 추천</a></li>
+          <li><a href="tips.html">여행 팁</a></li>
+          <li><a href="contact.html">문의하기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== 본문 영역 ===================== -->
+  <!-- main: 페이지의 핵심 내용이 들어가는 영역 (한 페이지에 하나만 사용) -->
+  <main>
+
+    <!-- ---------- 메인 배너 ---------- -->
+    <!-- section: 주제별로 내용을 나누는 구역 / hero: 첫 화면의 큰 배너를 부르는 일반적인 이름 -->
+    <section class="hero">
+      <div class="container hero-content">
+
+        <!-- p: 문단(글) 태그 → 제목 위에 들어가는 작은 문구 -->
+        <p class="hero-sub">가까운 곳에서 찾는 특별한 하루</p>
+
+        <!-- h1: 가장 중요한 제목 (한 페이지에 하나만) / br: 줄바꿈 -->
+        <h1>이번 주말,<br>어디로 떠나볼까요?</h1>
+
+        <!-- 배너 설명 문구 -->
+        <p class="hero-desc">산과 바다, 오래된 골목과 새로운 도시까지.<br>지금 떠나기 좋은 국내 여행지를 소개합니다.</p>
+
+        <!-- 링크를 버튼처럼 보이게 꾸밀 예정 (btn: 버튼 공통 모양 / btn-primary: 강조 버튼) -->
+        <a href="destinations.html" class="btn btn-primary">여행지 둘러보기</a>
+      </div>
+    </section>
+
+    <!-- ---------- 인기 여행지 ---------- -->
+    <!-- id="destinations": 페이지 안에서 이 위치로 바로 이동할 때 쓰는 고유 이름 (한 페이지에 하나만) -->
+    <section class="section destinations" id="destinations">
+      <div class="container">
+
+        <!-- h2: 섹션 제목 (h1 다음 단계의 제목) -->
+        <h2 class="section-title">인기 여행지</h2>
+        <p class="section-desc">많은 여행자들이 찾는 대표 여행지예요.</p>
+
+        <!-- card-list: 카드 여러 개를 묶는 상자 → CSS로 가로로 나란히 배치할 예정 -->
+        <div class="card-list">
+
+          <!-- article: 독립적인 내용 하나(카드 한 장)를 나타내는 태그 -->
+          <!-- card: 모든 카드에 공통으로 적용할 이름 / card-seoul: 서울 카드만 따로 꾸밀 이름 -->
+          <article class="card card-seoul">
+
+            <!-- 이미지가 들어갈 자리 → CSS에서 배경 이미지로 사진을 넣을 예정 -->
+            <div class="card-image"></div>
+
+            <!-- 카드의 글 내용 부분 -->
+            <div class="card-body">
+              <!-- 여행지 분류를 표시하는 작은 태그(라벨) -->
+              <span class="tag">도시</span>
+              <!-- h3: 카드 제목 (h2 다음 단계의 제목) -->
+              <h3>서울</h3>
+              <p>고궁과 한옥마을, 한강 야경까지. 전통과 현대가 함께 있는 도시.</p>
+              <!-- #seoul: destinations.html 페이지 안의 id="seoul" 위치로 바로 이동 -->
+              <a href="destinations.html#seoul" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+
+          <!-- 아래 카드들도 서울 카드와 같은 구조 (내용과 이름표만 다름) -->
+          <article class="card card-busan">
+            <div class="card-image"></div>
+            <div class="card-body">
+              <span class="tag">바다</span>
+              <h3>부산</h3>
+              <p>해운대와 광안리, 감천문화마을. 바다와 함께하는 활기찬 항구 도시.</p>
+              <a href="destinations.html#busan" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+
+          <article class="card card-gyeongju">
+            <div class="card-image"></div>
+            <div class="card-body">
+              <span class="tag">역사</span>
+              <h3>경주</h3>
+              <p>불국사와 첨성대, 대릉원. 천년 신라의 숨결이 살아있는 지붕 없는 박물관.</p>
+              <a href="destinations.html#gyeongju" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+
+          <article class="card card-jeju">
+            <div class="card-image"></div>
+            <div class="card-body">
+              <span class="tag">자연</span>
+              <h3>제주</h3>
+              <p>한라산과 오름, 에메랄드빛 바다. 사계절 언제 가도 좋은 섬.</p>
+              <a href="destinations.html#jeju" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+
+          <article class="card card-gangneung">
+            <div class="card-image"></div>
+            <div class="card-body">
+              <span class="tag">바다</span>
+              <h3>강릉</h3>
+              <p>경포대와 안목해변 커피거리. 동해의 일출과 커피 향이 어우러진 곳.</p>
+              <a href="destinations.html#gangneung" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+
+          <article class="card card-jeonju">
+            <div class="card-image"></div>
+            <div class="card-body">
+              <span class="tag">맛집</span>
+              <h3>전주</h3>
+              <p>한옥마을 골목 산책과 비빔밥, 막걸리 한 상. 맛과 멋의 도시.</p>
+              <a href="destinations.html#jeonju" class="card-link">자세히 보기 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- 계절별 추천 ---------- -->
+    <section class="section seasons" id="seasons">
+      <div class="container">
+        <h2 class="section-title">계절별 추천 여행</h2>
+        <p class="section-desc">계절마다 달라지는 풍경을 즐겨보세요.</p>
+
+        <!-- 봄·여름·가을·겨울 4개 항목을 목록으로 구성 -->
+        <ul class="season-list">
+          <!-- season: 공통 모양 / season-spring 등: 계절마다 다른 색을 넣기 위한 이름 -->
+          <li class="season season-spring">
+            <h3>봄</h3>
+            <p>진해 군항제 벚꽃길, 광양 매화마을</p>
+          </li>
+          <li class="season season-summer">
+            <h3>여름</h3>
+            <p>속초 해수욕장, 담양 죽녹원 대나무숲</p>
+          </li>
+          <li class="season season-autumn">
+            <h3>가을</h3>
+            <p>내장산 단풍, 정선 민둥산 억새밭</p>
+          </li>
+          <li class="season season-winter">
+            <h3>겨울</h3>
+            <p>평창 눈꽃 축제, 태백산 설경</p>
+          </li>
+        </ul>
+
+        <!-- center: 안의 버튼을 가운데 정렬하기 위한 상자 -->
+        <div class="center">
+          <!-- btn-outline: 테두리만 있는 버튼 모양으로 꾸밀 예정 -->
+          <a href="seasons.html" class="btn btn-outline">계절별 여행 더 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- 여행 팁 ---------- -->
+    <section class="section tips" id="tips">
+      <div class="container">
+        <h2 class="section-title">알아두면 좋은 여행 팁</h2>
+
+        <!-- 팁 3개를 묶는 상자 → CSS로 3칸 나란히 배치할 예정 -->
+        <div class="tip-list">
+          <!-- tip: 팁 하나를 담는 상자 -->
+          <div class="tip">
+            <h3>🚄 교통</h3>
+            <p>KTX·SRT는 출발 한 달 전부터 예매할 수 있어요. 주말·명절에는 미리 예매하세요.</p>
+          </div>
+          <div class="tip">
+            <h3>🏨 숙소</h3>
+            <p>성수기에는 숙소가 빨리 마감돼요. 한옥스테이나 게스트하우스도 좋은 선택이에요.</p>
+          </div>
+          <div class="tip">
+            <h3>🎒 준비물</h3>
+            <p>편한 신발과 보조배터리는 필수! 산이나 바다에 간다면 날씨를 꼭 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== 푸터 영역 ===================== -->
+  <!-- footer: 페이지 맨 아래 영역 (저작권, 하단 메뉴 등) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- 하단 로고 (링크가 아닌 일반 글자) -->
+      <p class="footer-logo">우리나라<span>여행</span></p>
+
+      <!-- 하단 메뉴 / aria-label로 상단 메뉴와 구분 -->
+      <nav aria-label="하단 메뉴">
+        <ul class="footer-nav">
+          <li><a href="destinations.html">여행지</a></li>
+          <li><a href="seasons.html">계절별 추천</a></li>
+          <li><a href="tips.html">여행 팁</a></li>
+          <li><a href="contact.html">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <!-- &copy; : 저작권 기호 ©를 표시하는 특수문자 코드 -->
+      <p class="copyright">&copy; 2026 우리나라 여행. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
