@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국내 여행지 추천</title>
+
+  <!-- 구글 웹폰트(Noto Sans KR)를 불러옴 → 굵고 깔끔한 한글 글꼴 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- 이 페이지용 CSS 파일 연결 -->
+  <link rel="stylesheet" href="css/recommend.css">
+</head>
+<body>
+
+  <main class="page">
+
+    <!-- 페이지 큰 제목 -->
+    <h1 class="page-title">국내 여행지 추천</h1>
+
+    <!-- 카드 전체를 감싸는 상자: 안에 세로 줄(column) 3개가 들어감 -->
+    <div class="card-grid">
+
+      <!-- ========== 첫 번째 줄 ========== -->
+      <div class="column">
+
+        <!-- 카드 1: 힐링 (사진 + 아래 흰색 설명 띠) -->
+        <article class="card">
+          <!-- 사진과 큰 제목이 겹쳐지는 영역 -->
+          <div class="card-image">
+            <img src="images/healing.jpg" alt="바다가 보이는 숲속 캠핑장">
+            <h2 class="card-title">힐링</h2>
+          </div>
+          <!-- 사진 아래 설명 띠 -->
+          <p class="card-caption">힐링 / HEALING</p>
+        </article>
+
+        <!-- 카드 4: 커플 (card-overlay → 사진이 카드 전체를 덮고 글자가 사진 위에 올라감) -->
+        <article class="card card-overlay">
+          <div class="card-image">
+            <img src="images/couple.jpg" alt="노을 진 바닷가를 걷는 커플">
+            <h2 class="card-title">커플</h2>
+          </div>
+          <p class="card-caption">커플 / COUPLE</p>
+        </article>
+
+      </div>
+
+      <!-- ========== 두 번째 줄 (column-offset → 아래로 조금 내려서 엇갈리게 배치) ========== -->
+      <div class="column column-offset">
+
+        <!-- 카드 2: 관광 (title-dark → 밝은 사진 위라서 제목을 검은색으로) -->
+        <article class="card">
+          <div class="card-image">
+            <img src="images/sightseeing.jpg" alt="경복궁 근정전">
+            <h2 class="card-title title-dark">관광</h2>
+          </div>
+          <p class="card-caption">관광 / SIGHTSEEING</p>
+        </article>
+
+        <!-- 카드 5: 우정 -->
+        <article class="card">
+          <div class="card-image">
+            <img src="images/friends.jpg" alt="바닷가에서 사진을 찍는 친구들">
+            <h2 class="card-title title-dark">우정</h2>
+          </div>
+          <p class="card-caption">우정 / FRIENDS</p>
+        </article>
+
+      </div>
+
+      <!-- ========== 세 번째 줄 ========== -->
+      <div class="column">
+
+        <!-- 카드 3: 효도 (card-tall → 다른 카드보다 세로로 더 긴 카드) -->
+        <article class="card card-tall">
+          <div class="card-image">
+            <img src="images/family.jpg" alt="계곡 산책로를 걷는 부모님">
+            <h2 class="card-title">효도</h2>
+          </div>
+          <p class="card-caption">효도 / FAMILY</p>
+        </article>
+
+        <!-- 카드 6: 액티비티 (사진이 카드 전체를 덮는 형태) -->
+        <article class="card card-overlay">
+          <div class="card-image">
+            <img src="images/activity.jpg" alt="바다 위 패러글라이딩과 수상스키">
+            <h2 class="card-title">액티비티</h2>
+          </div>
+          <p class="card-caption">액티비티 / ACTIVITY</p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- 오른쪽 아래 반짝이 장식 2개 (내용이 없는 장식이라 aria-hidden으로 화면 낭독기에서 숨김) -->
+    <span class="sparkle sparkle-big" aria-hidden="true"></span>
+    <span class="sparkle sparkle-small" aria-hidden="true"></span>
+
+  </main>
+
+</body>
+</html>
