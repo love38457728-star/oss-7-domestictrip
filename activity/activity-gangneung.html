@@ -1,24 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>2. 강릉 - 액티비티 추천 여행지</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강릉 액티비티 여행 코스</title>
   <style>
-    .page-wrap { max-width: 800px; margin-top: 20px; }
-    .box { border: 1px solid #d0d7de; border-radius: 12px; padding: 24px; margin-top: 16px; }
+    :root {
+      --bg: #f4f6f9; --surface: #ffffff; --text: #111827; --muted: #6b7280;
+      --line: #e5e7eb; --accent: #0d9488; --accent-soft: #ccfbf1;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Pretendard", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .back-link { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+    .back-link:hover { color: var(--text); }
+    .hero { background: linear-gradient(135deg, #0f766e 0%, #0d9488 65%, #2dd4bf 100%); color: #fff; border-radius: 18px; padding: 28px; box-shadow: 0 12px 28px rgba(13, 148, 136, 0.18); }
+    .tag { display: inline-block; background: rgba(255, 255, 255, 0.2); padding: 4px 12px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; margin-bottom: 10px; }
+    .hero h1 { margin: 0 0 8px; font-size: 1.85rem; }
+    .hero p { margin: 0; opacity: 0.92; font-size: 0.98rem; }
+    .route-strip { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; font-size: 0.92rem; color: var(--muted); overflow-x: auto; white-space: nowrap; }
+    .route-strip strong { color: var(--text); margin-right: 6px; }
+    .timeline { position: relative; margin-top: 28px; padding-left: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 2px; background: #cbd5e1; }
+    .stop { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .stop::before { content: ""; position: absolute; left: -24px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+    .stop-left { display: flex; align-items: center; gap: 14px; }
+    .step-num { min-width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 0.88rem; display: grid; place-items: center; }
+    .stop-title { margin: 0; font-size: 1.05rem; font-weight: 700; }
+    .stop-sub { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
+    .badge { padding: 5px 10px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .b-food { background: #fef3c7; color: #92400e; }
+    .b-act { background: #e0f2fe; color: #075985; }
+    .b-stay { background: #ede9fe; color: #5b21b6; }
+    .b-cafe { background: #dcfce7; color: #166534; }
+    .b-home { background: #f3f4f6; color: #374151; }
+    .nav-footer { margin-top: 32px; display: flex; justify-content: space-between; gap: 12px; }
+    .nav-btn { text-decoration: none; background: var(--surface); border: 1px solid var(--line); color: var(--text); padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; }
+    .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
 <body>
-  <div class="page-wrap">
-    <a href="javascript:history.back()">← 목록으로 돌아가기</a>
-    <div class="box">
-      <h1>2. 강릉</h1>
-      <p><strong>주요 액티비티:</strong> 아라나비, 수상레저</p>
-      <p>동해 바다 위를 가로지르는 체험과 시원한 해양 레저를 즐길 수 있는 도시입니다.</p>
-      <ul>
-        <li>아라나비</li>
-        <li>수상레저</li>
-      </ul>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back-link" href="../activity.html">← 액티비티 목록</a>
+      <a class="back-link" href="../pr2.html">메인으로</a>
+    </div>
+
+    <section class="hero">
+      <span class="tag">ACTIVITY · 아라나비 &amp; 수상레저</span>
+      <h1>강릉 액티비티 여행</h1>
+      <p>아라나비와 수상레저, 강릉 먹거리와 해변·카페까지 이어지는 동해안 액티비티 코스</p>
+    </section>
+
+    <div class="route-strip">
+      <strong>동선 요약</strong>
+      최일순 짬뽕 순두부 → 아라나비 → 강릉닭강정 → 사문진해변 → 스카이베이 → 정화식당 → 청평리버랜드수상레저 → 감자적 1번지 → 카페 툇마루 → 집가기
+    </div>
+
+    <div class="timeline">
+      <div class="stop"><div class="stop-left"><span class="step-num">01</span><div><h2 class="stop-title">최일순 짬뽕 순두부</h2><p class="stop-sub">얼큰한 짬뽕 순두부로 시작하는 식사</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">02</span><div><h2 class="stop-title">아라나비</h2><p class="stop-sub">바다 위를 가로지르는 스릴 액티비티</p></div></div><span class="badge b-act">액티비티</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">03</span><div><h2 class="stop-title">강릉닭강정</h2><p class="stop-sub">강릉 대표 간식 포장 및 맛보기</p></div></div><span class="badge b-food">간식·식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">04</span><div><h2 class="stop-title">사문진해변</h2><p class="stop-sub">해변 산책 및 바다 조망</p></div></div><span class="badge b-cafe">산책·휴식</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">05</span><div><h2 class="stop-title">스카이베이</h2><p class="stop-sub">오션뷰 숙소 체크인 및 휴식</p></div></div><span class="badge b-stay">숙소</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">06</span><div><h2 class="stop-title">정화식당</h2><p class="stop-sub">든든한 로컬 한 끼 식사</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">07</span><div><h2 class="stop-title">청평리버랜드수상레저</h2><p class="stop-sub">물 위에서 즐기는 시원한 수상레저</p></div></div><span class="badge b-act">액티비티</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">08</span><div><h2 class="stop-title">감자적 1번지</h2><p class="stop-sub">고소한 감자전과 함께하는 식사</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">09</span><div><h2 class="stop-title">카페 툇마루</h2><p class="stop-sub">커피 한 잔으로 마무리하는 여운</p></div></div><span class="badge b-cafe">카페</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">10</span><div><h2 class="stop-title">집가기</h2><p class="stop-sub">안전하게 귀가</p></div></div><span class="badge b-home">귀가</span></div>
+    </div>
+
+    <div class="nav-footer">
+      <a class="nav-btn" href="yeosu.html">← 이전: 여수</a>
+      <a class="nav-btn" href="gongju.html">다음: 공주 →</a>
     </div>
   </div>
 </body>
