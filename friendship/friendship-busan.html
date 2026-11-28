@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>2. 부산 - 우정 추천 여행지</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>부산 우정 여행 코스</title>
   <style>
-    .page-wrap { max-width: 800px; margin-top: 20px; }
-    .box { border: 1px solid #d0d7de; border-radius: 12px; padding: 24px; margin-top: 16px; }
+    :root { --bg: #f6f7f9; --surface: #ffffff; --text: #111827; --muted: #6b7280; --line: #e5e7eb; --accent: #2563eb; --accent-soft: #dbeafe; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Pretendard", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 32px 20px 64px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .back-link { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+    .back-link:hover { color: var(--text); }
+    .hero { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 65%, #60a5fa 100%); color: #fff; border-radius: 18px; padding: 28px; box-shadow: 0 12px 28px rgba(37, 99, 235, 0.18); }
+    .tag { display: inline-block; background: rgba(255, 255, 255, 0.22); padding: 4px 12px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; margin-bottom: 10px; }
+    .hero h1 { margin: 0 0 8px; font-size: 1.85rem; }
+    .hero p { margin: 0; opacity: 0.94; font-size: 0.98rem; }
+    .route-strip { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; font-size: 0.92rem; color: var(--muted); overflow-x: auto; white-space: nowrap; }
+    .route-strip strong { color: var(--text); margin-right: 6px; }
+    .timeline { position: relative; margin-top: 28px; padding-left: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 2px; background: #cbd5e1; }
+    .stop { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .stop::before { content: ""; position: absolute; left: -24px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+    .stop-left { display: flex; align-items: center; gap: 14px; }
+    .step-num { min-width: 30px; height: 30px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 0.88rem; display: grid; place-items: center; }
+    .stop-title { margin: 0; font-size: 1.05rem; font-weight: 700; }
+    .stop-sub { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
+    .badge { padding: 5px 10px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .b-food { background: #fef3c7; color: #92400e; }
+    .b-stay { background: #ede9fe; color: #5b21b6; }
+    .b-cafe { background: #dcfce7; color: #166534; }
+    .b-home { background: #f3f4f6; color: #374151; }
+    .nav-footer { margin-top: 32px; display: flex; justify-content: space-between; gap: 12px; }
+    .nav-btn { text-decoration: none; background: var(--surface); border: 1px solid var(--line); color: var(--text); padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; }
+    .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
 <body>
-  <div class="page-wrap">
-    <a href="../friendship.html">← 목록으로 돌아가기</a>
-    <div class="box">
-      <h1>2. 부산</h1>
-      <p><strong>테마:</strong> 죽도해변에서 파도를 타며 즐기는 해양 스포츠</p>
-      <p>시원한 파도를 가르며 함께 서핑과 물놀이를 즐기고, 활기찬 해변 분위기를 만끽할 수 있는 코스입니다.</p>
-      <ul>
-        <li>서핑 및 해양 스포츠 강습·체험</li>
-        <li>해변 산책 및 로컬 맛집 탐방</li>
-      </ul>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back-link" href="../friendship.html">← 우정 목록</a>
+      <a class="back-link" href="../pr2.html">메인으로</a>
+    </div>
+
+    <section class="hero">
+      <span class="tag">FRIENDSHIP · 야시장 &amp; 스파·바다</span>
+      <h1>부산 우정 여행</h1>
+      <p>깡통야시장, 스파랜드, 해수욕장과 국제시장 먹거리까지 활기찬 부산 우정 코스</p>
+    </section>
+
+    <div class="route-strip">
+      <strong>동선 요약</strong>
+      부산댁 → 세븐테마카페(동물) → 깡통야시장 → 센텀 스파랜드 → 숙소 → 도쿄뱃살 → 해수욕장 → 개미집국제시장 → 집가기
+    </div>
+
+    <div class="timeline">
+      <div class="stop"><div class="stop-left"><span class="step-num">01</span><div><h2 class="stop-title">부산댁</h2><p class="stop-sub">정갈한 한 끼로 여행 시작</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">02</span><div><h2 class="stop-title">세븐테마카페(동물)</h2><p class="stop-sub">동물들과 함께하는 이색 카페 타임</p></div></div><span class="badge b-cafe">카페·체험</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">03</span><div><h2 class="stop-title">깡통야시장</h2><p class="stop-sub">다양한 야시장 먹거리와 활기찬 밤 분위기</p></div></div><span class="badge b-food">야시장</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">04</span><div><h2 class="stop-title">센텀 스파랜드</h2><p class="stop-sub">스파와 사우나로 재충전</p></div></div><span class="badge b-stay">스파·휴식</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">05</span><div><h2 class="stop-title">숙소</h2><p class="stop-sub">숙소 체크인 및 휴식</p></div></div><span class="badge b-stay">숙소</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">06</span><div><h2 class="stop-title">도쿄뱃살</h2><p class="stop-sub">둘째 날 든든한 식사</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">07</span><div><h2 class="stop-title">해수욕장</h2><p class="stop-sub">부산 바다를 바라보며 산책</p></div></div><span class="badge b-cafe">바다·산책</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">08</span><div><h2 class="stop-title">개미집국제시장</h2><p class="stop-sub">낙곱새 등 대표 메뉴와 국제시장 탐방</p></div></div><span class="badge b-food">식사</span></div>
+      <div class="stop"><div class="stop-left"><span class="step-num">09</span><div><h2 class="stop-title">집가기</h2><p class="stop-sub">안전하게 귀가</p></div></div><span class="badge b-home">귀가</span></div>
+    </div>
+
+    <div class="nav-footer">
+      <a class="nav-btn" href="sokcho.html">← 이전: 속초</a>
+      <a class="nav-btn" href="mokpo.html">다음: 목포 →</a>
     </div>
   </div>
 </body>
